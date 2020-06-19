@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Страница тестового задания</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+  <script src="maskinput.js"></script>
+  <script>
+    $(document).ready(function(){PopupHide();});
+    function PopupShow(){$("#popup").show(); }
+    function PopupHide(){$("#popup").hide(); }
+  </script>
+  <script type="text/javascript">
+   jQuery(function($){
+   $("#phone").mask("+7(999) 999-99-99");
+   });
+  </script>
+ </head>
+ <body>
+	<h1 class="center">Вакансия веб-программист</h1>
+	<div class="text">
+Тестовое задание на должность веб-программист SEO.RU<br>
+ <br>
+1.	Зарегистрировать бесплатный хостинг и домен. <br>
+2.	Развернуть на бесплатном хостинге WP. <br>
+3.	Шрифт на сайте «montserrat», он во вложении. Цвет #333333 <br>
+4.	Создать страницу. <br>
+5.	Прописать на ней мета-теги:  <br>
+<textBold>Title: Тестовое задание на должность веб-программиста компании SEO.RU <br>
+Description: На этой странице отображен результат тестового задания. <br>
+H1: Вакансия веб-программист</textBold><br>
+6.	После H1 разместить текст текущего тестового задания <br>
+7.	Поставить в тексте на словосочетание <a href="javascript:PopupShow()">«форму обратной связи»</a> ссылку, при нажатии на которое откроется форма обратной связи в popup. <br>
+8.	Реализовать форму обратной связи в popup окне (готовые решения и плагины использовать запрещено, библиотечки можно).  <br>
+9.	Внешний вид формы ( <br>
+•	Максимальная ширина 350,  <br>
+•	цвет кнопки и текста #333333, при наведении на кнопку должна быть инверсия цвета. <br>
+•	поле “Телефон” должно быть обязательным, у поля “Телефон” должна быть маска. <br>
+• 	Галочка на обработку должна быть обязательна и по умолчанию установлена.  <br>
+•	При невыполнении условия о обязательных полях должно выводится сообщение об ошибке, или успешном заполнении – сообщение об отправке. <br>
+•	Реализовать на php функционал отправки данных с формы на почту. <br>
+•	При нажатии на «крестик» форма должны закрываться. <br>
+•	Страница и форма должны быть адаптивными. <br>
+	</div>
+	<div id="popup">
+		<backpopup></backpopup>
+		
+		<form method="post" name="form" class="popup" action="FOS.php"> <!--onsubmit="return false;"-->
+				<flexpopup>
+					<a class="text center popupmaintext">Обратный звонок</a>
+					<a href="javascript:PopupHide()"class="popupclose"><img src="Docs/close.png" alt="Close" class="popupimage"></a>
+				</flexpopup>
+				<a class="text popuptext" name="name">Имя</a>
+				<input type="text" name="name" class="popupcharger" required>
+				<a class="text popuptext">Телефон</a>
+				<input type="phone" step="any" id="phone" name="phone" class="popupcharger" placeholder="+7" required>
+				<flex><input type="checkbox" class="checkbox" checked required><text>Согласиться на обработку <br> персональных данных</text></flex>
+				<div>
+				</div>
+				<input type="submit" value="Отправить" name="submit" class="submit" >
+		</form>
+	</div>
+ </body>
+</html>
