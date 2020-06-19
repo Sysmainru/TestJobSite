@@ -5,7 +5,7 @@ $name = $_POST['name'];
 $phone = $_POST['phone'];
 $text = "";
 
-if (mail("sysmainen@gmail.com", "Был заказан обратный звонок ", "Имя: ".$name.". Телефон: ".$phone))
+if (mail("sysmainru@gmail.com", "Был заказан обратный звонок ", "Имя: ".$name.". Телефон: ".$phone))
 	{
 		$text = 'Ваша заявка принята';
 		header("Location: /");
